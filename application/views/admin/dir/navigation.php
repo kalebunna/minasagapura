@@ -20,34 +20,52 @@
 
                                 <li class="sidebar-list"><a class="sidebar-link sidebar-title link-nav" href="<?= base_url() ?>admin/dashboard"><i
                                             data-feather="home"></i><span>Halaman Utama</span></a></li>
-                                <li class="sidebar-list"><a class="sidebar-link sidebar-title" href="#"><i
-                                            data-feather="anchor"></i><span>Starter kit</span></a>
+                                <li class="sidebar-list"><a class="sidebar-link sidebar-title" href="#"><i data-feather="shopping-bag"></i><span>Profil Sekolah</span></a>
                                     <ul class="sidebar-submenu">
-                                        <li><a class="submenu-title" href="#">color version<span class="sub-arrow"><i
-                                                        class="fa fa-chevron-right"></i></span></a>
-                                            <ul class="nav-sub-childmenu submenu-content">
-                                                <li><a href="index.html">Layout Light</a></li>
-                                                <li><a href="layout-dark.html">Layout Dark</a></li>
-                                            </ul>
+                                        <li>
+                                            <a href="<?= base_url('admin/edit/sejarah'); ?>">Edit sejarah</a>
                                         </li>
-                                        <li> <a class="submenu-title" href="#">Page layout<span class="sub-arrow"><i
-                                                        class="fa fa-chevron-right"></i></span></a>
-                                            <ul class="nav-sub-childmenu submenu-content">
-                                                <li><a href="boxed.html">Boxed</a></li>
-                                                <li><a href="layout-rtl.html">RTL</a></li>
-                                            </ul>
+                                        <li>
+                                            <a href="<?= base_url('admin/edit/visimisi'); ?>">Edit visi dan misi</a>
                                         </li>
-                                        <li><a href="tes.html"><span>Hire</span></a></li>
-                                        <li> <a class="submenu-title" href="#">Footers<span class="sub-arrow"><i
-                                                        class="fa fa-chevron-right"></i></span></a>
-                                            <ul class="nav-sub-childmenu submenu-content">
-                                                <li><a href="footer-light.html">Footer Light</a></li>
-                                                <li><a href="footer-dark.html">Footer Dark</a></li>
-                                                <li><a href="footer-fixed.html">Footer Fixed</a></li>
-                                            </ul>
+                                        <li>
+                                            <a href="<?= base_url('admin/edit/logomotto'); ?>">Edit logo dan motto</a>
+                                        </li>
+                                        <li>
+                                            <a href="<?= base_url('admin/edit/struktur'); ?>">Edit struktur organisasi</a>
+                                        </li>
+                                        <li>
+                                            <a href="<?= base_url('admin/edit/sambutan_kepsek'); ?>">Edit sambutan Kepala sekolah</a>
+                                        </li>
+                                        <li>
+                                            <a href="<?= base_url('admin/edit/sambutan_yayasan'); ?>">Edit sambutan yayasan</a>
                                         </li>
                                     </ul>
                                 </li>
+                                <li class="sidebar-list"><a class="sidebar-link sidebar-title link-nav" href="<?= base_url('admin/guru'); ?>"><i
+                                            data-feather="home"></i><span>Guru</span></a></li>
+                                <li class="sidebar-list"><a class="sidebar-link sidebar-title link-nav" href="<?= base_url('admin/siswa'); ?>"><i
+                                            data-feather="home"></i><span>Siswa</span></a></li>
+                                <li class="sidebar-list"><a class="sidebar-link sidebar-title link-nav" href="<?= base_url('admin/info'); ?>"><i
+                                            data-feather="home"></i><span>Informasi internal</span></a></li> 
+                                <li class="sidebar-list"><a class="sidebar-link sidebar-title" href="#"><i data-feather="shopping-bag"></i><span>Seputar Sekolah</span></a>
+                                    <ul class="sidebar-submenu">
+                                        <li>
+                                            <a href="<?= base_url('admin/galeri'); ?>">Galeri Foto</a>
+                                        </li>
+                                        <li>
+                                            <a href="<?= base_url('admin/prestasi'); ?>">Prestasi</a>
+                                        </li>
+                                        <li>
+                                            <a href="<?= base_url('admin/edit/ekskul'); ?>">Ekstrakulikuler</a>
+                                        </li>
+                                    </ul>
+                                </li>                       
+                                <li class="sidebar-list"><a class="sidebar-link sidebar-title link-nav" href="<?= base_url('admin/testimoni'); ?>"><i
+                                            data-feather="home"></i><span>Testimoni</span></a></li>
+                                 <li class="sidebar-list"><a class="sidebar-link sidebar-title link-nav" href="<?= base_url('admin/artikel'); ?>"><i
+                                            data-feather="home"></i><span>Artikel</span></a></li> 
+
                             </ul>
                         </div>
                         <div class="right-arrow" id="right-arrow"><i data-feather="arrow-right"></i></div>
