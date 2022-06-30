@@ -45,6 +45,7 @@
         media="screen">
     <!-- Responsive css-->
     <link rel="stylesheet" type="text/css" href="<?=base_url()?>assets/templates_admin/assets/css/responsive.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.css" rel="stylesheet">
 </head>
 
 <body onload="startTime()">

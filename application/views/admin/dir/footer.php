@@ -33,6 +33,7 @@
     <script src="<?=base_url()?>assets/templates_admin/assets/js/script.js"></script>
     <script src="<?= base_url('assets/js/style.js'); ?>"></script>
     <!-- <script src="<?=base_url()?>assets/templates_admin/assets/js/theme-customizer/customizer.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.min.js"></script>
     <!-- Theme js-->
 
 

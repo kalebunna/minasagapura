@@ -48,7 +48,7 @@ class Edit extends CI_Controller
             );
 
             $this->load->view('admin/dir/header', $data);
-            $this->load->view('admin/dir/navigation');
+            // $this->load->view('admin/dir/navigation');
             $this->load->view('admin/edit/sejarah');
             $this->load->view('admin/dir/footer');
         }
@@ -91,7 +91,7 @@ class Edit extends CI_Controller
             );
 
             $this->load->view('admin/dir/header', $data);
-            $this->load->view('admin/dir/navigation');
+            // $this->load->view('admin/dir/navigation');
             $this->load->view('admin/edit/visimisi');
             $this->load->view('admin/dir/footer');
         }
@@ -134,7 +134,7 @@ class Edit extends CI_Controller
             );
 
             $this->load->view('admin/dir/header', $data);
-            $this->load->view('admin/dir/navigation');
+            // $this->load->view('admin/dir/navigation');
             $this->load->view('admin/edit/logomotto');
             $this->load->view('admin/dir/footer');
         }
@@ -204,7 +204,7 @@ class Edit extends CI_Controller
             );
 
             $this->load->view('admin/dir/header', $data);
-            $this->load->view('admin/dir/navigation');
+            // $this->load->view('admin/dir/navigation');
             $this->load->view('admin/edit/struktur');
             $this->load->view('admin/dir/footer');
         }
@@ -248,7 +248,7 @@ class Edit extends CI_Controller
             );
 
             $this->load->view('admin/dir/header', $data);
-            $this->load->view('admin/dir/navigation');
+            // $this->load->view('admin/dir/navigation');
             $this->load->view('admin/edit/sambutan_yayasan');
             $this->load->view('admin/dir/footer');
         }
@@ -314,7 +314,7 @@ class Edit extends CI_Controller
             );
 
             $this->load->view('admin/dir/header', $data);
-            $this->load->view('admin/dir/navigation');
+            // $this->load->view('admin/dir/navigation');
             $this->load->view('admin/edit/sambutan_kepsek');
             $this->load->view('admin/dir/footer');
         }
