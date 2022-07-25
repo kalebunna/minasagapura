@@ -15,23 +15,13 @@ class Siswa extends CI_Controller
     }
 
     // List all your items
-    public function index($nama = '', $kelas = 'X', $jurusan = 'RPL')
+    public function index()
     {
         $data = array(
             'title'         => 'Data Siswa',
             'count_contact' => $this->model_counter->count_contact(),
             'count_comment' => $this->model_counter->count_comment()
         );
-
-        if (isset($_POST['cari'])) {
-            $nama         = $this->input->post('nama');
-            $kelas         = $this->input->post('kelas');
-            $jurusan     = $this->input->post('jurusan');
-
-            $data['siswas']     = $this->model_siswa->get_siswa($nama, $kelas, $jurusan);
-        } else {
-            $data['siswas']     = $this->model_siswa->get_siswa($nama, $kelas, $jurusan);
-        }
 
         $this->load->view('admin/dir/header', $data);
         // $this->load->view('admin/dir/navigation');
