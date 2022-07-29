@@ -34,14 +34,17 @@ class Model_page extends CI_Model
 
     public function get_data_informasi_public()
     {
-        $data=[
-            "nama_kepala_sekolah" => $this->db->query("SELECT nama FROM `guru` WHERE guru.kepala_sekolah = 1 LIMIT
-            1;")->row()->nama,
-            "jumlah_siswa"=>$this->db->get('siswa')->num_rows(),
-            "jumlah_guru"=>$this->db->get('guru')->num_rows(),
-            "jumlah_jurusan"=>$this->db->get('jurusan')->num_rows(),
-            "jumlah_kelas"=>$this->db->get('kelas')->num_rows(),
-            "data_sekolah"=>$this->db->limit(1)->get('data_sekolah  ')->row(),
+
+        $kepsek = $this->db->get("data_sekolah");
+
+
+        $data = [
+            "nama_kepala_sekolah" => $kepsek->num_rows() < 0 ? "Data Sekolah Tidak Terisi" : $kepsek->row()->kepala_sekolah,
+            "jumlah_siswa" => $this->db->get('siswa')->num_rows(),
+            "jumlah_guru" => $this->db->get('guru')->num_rows(),
+            "jumlah_jurusan" => $this->db->get('jurusan')->num_rows(),
+            "jumlah_kelas" => $this->db->get('kelas')->num_rows(),
+            "data_sekolah" => $this->db->limit(1)->get('data_sekolah')->row(),
         ];
 
         return $data;

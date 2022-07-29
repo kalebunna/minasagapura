@@ -14,15 +14,15 @@ class Data extends CI_Controller
     public function guru()
     {
         $data = array(
-            'data_sekolah'=>$this->Model_utility->get_data_sekolah(),
+            'data_sekolah' => $this->Model_utility->get_data_sekolah(),
             'title'        => 'Data Guru - SMK Pelita Pematangsiantar',
         );
 
-        $perpage = 2;
+        $perpage = 5;
         $offset = $this->uri->segment(3);
         $data['data_guru'] = $this->model_data->guru_nama_aja($perpage, $offset)->result();
 
-        $config['base_url'] = base_url().'Data/guru/';
+        $config['base_url'] = base_url() . 'Data/guru/';
         $config['total_rows'] = $this->model_data->guru()->num_rows();
         $config['per_page'] = $perpage;
 
@@ -59,10 +59,10 @@ class Data extends CI_Controller
         // custom pagination
 
         $this->pagination->initialize($config);
-        
-        $data['pagination'] = $this->pagination->create_links(); 
-        
-       
+
+        $data['pagination'] = $this->pagination->create_links();
+
+
         $this->load->view('dir/header', $data);
         $this->load->view('public/data/guru/index');
         $this->load->view('dir/footer');
@@ -70,7 +70,12 @@ class Data extends CI_Controller
 
     public function siswa()
     {
-        $data['title'] = 'Data Siswa - SMK Pelita Pematangsiantar';
+        $data = array(
+            'data_sekolah' => $this->Model_utility->get_data_sekolah(),
+            'title'        => 'Struktur Organisasi',
+        );
+
+        $data['title'] = 'Data Siswa ' . $this->Model_utility->get_nama_sekolah();;
 
         if (empty($this->input->get('kelas')) && empty($this->input->get('jurusan'))) {
             $data['siswas'] = $this->model_data->siswa_kelas_jurusan('X', 'RPL');

@@ -12,7 +12,7 @@ class Home extends CI_Controller
         $this->load->model('public/model_testimoni');
 
         $data = array(
-            'data_sekolah'=>$this->Model_utility->get_data_sekolah(),
+            'data_sekolah' => $this->Model_utility->get_data_sekolah(),
             'title'         => 'SMK Pelita Pematangsiantar',
             'impressium'     => $this->model_page->sambutan_kepsek(),
             'news'             => $this->model_article->get_news_lim5(),
@@ -21,7 +21,7 @@ class Home extends CI_Controller
             'testimonis'     => $this->model_testimoni->get_testimoni(),
         );
 
-        $this->load->view('dir/header',$data);
+        $this->load->view('dir/header', $data);
         $this->load->view('public/home');
         $this->load->view('dir/footer');
     }
