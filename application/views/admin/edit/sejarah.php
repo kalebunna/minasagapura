@@ -1,7 +1,10 @@
 <div class="container-fluid">
-    <a href="<?= base_url('admin/dashboard'); ?>">Admin</a> &raquo; <?= $title; ?>
-    <hr>
-    <h3 class="bold"><?= $title; ?></h3>
+
+    <div class="row page-titles">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active"><a href="javascript:void(0)"><?= $title; ?></a></li>
+        </ol>
+    </div>
     <div class="card card-body shadow-sm mt-4">
         <?php
         if ($this->session->flashdata('success')) {
@@ -23,8 +26,11 @@
         <div class="pt-3"></div>
 
         <label class="bold">Konten</label>
-        <textarea name="content" class="form-control mb-3" id="summernote"><?= $sejarah['content']; ?></textarea>
-        <?= form_error('content', '<span class="text-danger bold">', '</span>'); ?>
+        <div class="summernote">
+
+            <textarea name="content" class="form-control mb-3" id="summernote"><?= $sejarah['content']; ?></textarea>
+            <?= form_error('content', '<span class="text-danger bold">', '</span>'); ?>
+        </div>
         <button class="btn btn-primary mt-3" id="btn">Posting</button>
         <?= form_close(); ?>
     </div>
