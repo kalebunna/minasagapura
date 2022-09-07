@@ -18,35 +18,35 @@
     <meta property="og:description" content="Website Resmi Universitas Nahdlatul Ulama Indonesia" />
     <meta property="og:url" content="" />
     <meta property="og:site_name" content="UNUSIA" />
-    <meta property="og:image" content="<?=base_url()?>assets/templates/images/logobig.jpg" />
-    <meta property="og:image:secure_url" content="<?=base_url()?>assets/templates/images/logobig.jpg" />
+    <meta property="og:image" content="<?= base_url() ?>assets/templates/images/logobig.jpg" />
+    <meta property="og:image:secure_url" content="<?= base_url() ?>assets/templates/images/logobig.jpg" />
     <meta property="og:image:width" content="560" />
     <meta property="og:image:height" content="315" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:description" content="Website Resmi Universitas Nahdlatul Ulama Indonesia" />
     <meta name="twitter:title" content="UNUSIA | Universitas Nahdlatul Ulama Indonesia" />
     <meta name="twitter:site" content="https://twitter.com/unuindonesia" />
-    <meta name="twitter:image" content="<?=base_url()?>assets/templates/images/logobig.jpg" />
+    <meta name="twitter:image" content="<?= base_url() ?>assets/templates/images/logobig.jpg" />
 
     <!-- Favicons -->
-    <link rel="shortcut icon" type="image/x-icon" href="<?=base_url()?>assets/templates/images/favicon4.png">
-    <link href="<?=base_url()?>assets/templates/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link rel="shortcut icon" type="image/x-icon" href="<?= base_url() ?>assets/templates/images/favicon4.png">
+    <link href="<?= base_url() ?>assets/templates/img/apple-touch-icon.png" rel="apple-touch-icon">
 
     <!-- CSS here -->
-    <link rel="stylesheet" href="<?=base_url()?>assets/templates/css/preloader.css">
-    <link rel="stylesheet" href="<?=base_url()?>assets/templates/css/bootstrap.min.css">
-    <link rel="stylesheet" href="<?=base_url()?>assets/templates/css/meanmenu.css">
-    <link rel="stylesheet" href="<?=base_url()?>assets/templates/css/animate.min.css">
-    <link rel="stylesheet" href="<?=base_url()?>assets/templates/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="<?=base_url()?>assets/templates/css/swiper-bundle.css">
-    <link rel="stylesheet" href="<?=base_url()?>assets/templates/css/backToTop.css">
-    <link rel="stylesheet" href="<?=base_url()?>assets/templates/css/jquery.fancybox.min.css">
-    <link rel="stylesheet" href="<?=base_url()?>assets/templates/css/fontAwesome5Pro.css">
-    <link rel="stylesheet" href="<?=base_url()?>assets/templates/css/elegantFont.css">
-    <link rel="stylesheet" href="<?=base_url()?>assets/templates/css/default.css">
-    <link rel="stylesheet" href="<?=base_url()?>assets/templates/css/style.css">
+    <link rel="stylesheet" href="<?= base_url() ?>assets/templates/css/preloader.css">
+    <link rel="stylesheet" href="<?= base_url() ?>assets/templates/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?= base_url() ?>assets/templates/css/meanmenu.css">
+    <link rel="stylesheet" href="<?= base_url() ?>assets/templates/css/animate.min.css">
+    <link rel="stylesheet" href="<?= base_url() ?>assets/templates/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="<?= base_url() ?>assets/templates/css/swiper-bundle.css">
+    <link rel="stylesheet" href="<?= base_url() ?>assets/templates/css/backToTop.css">
+    <link rel="stylesheet" href="<?= base_url() ?>assets/templates/css/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="<?= base_url() ?>assets/templates/css/fontAwesome5Pro.css">
+    <link rel="stylesheet" href="<?= base_url() ?>assets/templates/css/elegantFont.css">
+    <link rel="stylesheet" href="<?= base_url() ?>assets/templates/css/default.css">
+    <link rel="stylesheet" href="<?= base_url() ?>assets/templates/css/style.css">
 
-    <script src="<?=base_url()?>assets/templates/js/vendor/jquery-3.5.1.min.js"></script>
+    <script src="<?= base_url() ?>assets/templates/js/vendor/jquery-3.5.1.min.js"></script>
 </head>
 
 <body>
@@ -80,7 +80,7 @@
                     <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-2 col-sm-4 col-6">
                         <div class="header__left d-flex">
                             <div class="logo">
-                                <h4><?= $data_sekolah->nama_sekolah?></h4>
+                                <h4><?= data_sekolah()->nama_website ?></h4>
                             </div>
                         </div>
                     </div>

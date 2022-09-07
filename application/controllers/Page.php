@@ -138,9 +138,9 @@ class Page extends CI_Controller
             </li>
             <li class="d=flex align-items-center">
                 <div class="course__video-info">
-                    <h5><span> Lokasi: </span><a
+                    <h5><span> Alamat : </span><a
                             href="https://www.google.co.id/maps/place/Penerimaan+Mahasiswa+Baru+Universitas+Wiraraja+(UNIJA)+Sumenep/@-7.043708,113.845525,15z/data=!4m5!3m4!1s0x0:0x5bdccecdc036d6f!8m2!3d-7.043708!4d113.845525"
-                            target="_blank"> ' . $data['data_sekolah']->lokasi . 'r</a></h5>
+                            target="_blank"> ' . $data['data_sekolah']->lokasi_lengkap . 'r</a></h5>
                 </div>
             </li>
             ' . (($data['jumlah_jurusan'] == 0) ? "" : '

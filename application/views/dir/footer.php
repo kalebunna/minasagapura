@@ -15,8 +15,7 @@
                   <div class="col-xxl-5 col-xl-5 col-lg-4 col-md-4">
                       <div class="cta__more d-md-flex justify-content-end p-relative z-index-1">
                           <div class="cta__apps d-lg-flex justify-content-end p-relative z-index-1">
-                              <a target="_blank" href="https://pmb.unusia.ac.id" class="active"><i
-                                      class="fab fa-google-play"></i>Informasi Selengkapnya</a>
+                              <a target="_blank" href="https://pmb.unusia.ac.id" class="active"><i class="fab fa-google-play"></i>Informasi Selengkapnya</a>
                           </div>
                       </div>
                   </div>
@@ -42,19 +41,15 @@
                               </div>
                               <div class="footer__widget-body">
                                   <p>
-                                      <i class="fas fa-map-marker-alt"></i>&nbsp;&nbsp;<a
-                                          href=""><?= $data_sekolah->lokasi_lengkap?><br><?= $data_sekolah->kodepos?>
+                                      <i class="fas fa-map-marker-alt"></i>&nbsp;&nbsp;<a href=""><?= data_sekolah()->lokasi_lengkap ?><br><?= data_sekolah()->kodepos ?>
                                       </a><br>
-                                      <i class="far fa-envelope"></i>&nbsp;&nbsp;<a
-                                          href="mailto:sekretariat@unusia.ac.id"><?= $data_sekolah->email?></a><br>
-                                      <i class="fab fa-whatsapp"></i>&nbsp;&nbsp;<a
-                                          href="https://api.whatsapp.com/send?phone=6281258881926"><?= $data_sekolah->telpon?></a><br>
+                                      <i class="far fa-envelope"></i>&nbsp;&nbsp;<a href="mailto:sekretariat@unusia.ac.id"><?= data_sekolah()->email ?></a><br>
+                                      <i class="fab fa-whatsapp"></i>&nbsp;&nbsp;<a href="https://api.whatsapp.com/send?phone=6281258881926"><?= data_sekolah()->telpon ?></a><br>
                                   </p>
                               </div>
                           </div>
                       </div>
-                      <div
-                          class="col-xxl-2 offset-xxl-1 col-xl-2 offset-xl-1 col-lg-3 offset-lg-0 col-md-2 offset-md-1 col-sm-3 offset-sm-1">
+                      <div class="col-xxl-2 offset-xxl-1 col-xl-2 offset-xl-1 col-lg-3 offset-lg-0 col-md-2 offset-md-1 col-sm-3 offset-sm-1">
                           <div class="footer__widget mb-50">
                               <div class="footer__widget-head mb-22">
                                   <h3 class="footer__widget-title">TENTANG</h3>
@@ -96,12 +91,9 @@
                               <div class="footer__widget-body">
                                   <div class="footer__social">
                                       <ul>
-                                          <li><a href="https://www.facebook.com/unusia"><i
-                                                      class="social_facebook"></i></a></li>
-                                          <li><a href="https://www.instagram.com/unuindonesia" class="pin"><i
-                                                      class="social_instagram"></i></a></li>
-                                          <li><a href="https://www.youtube.com/c/UnusiaTV" class="pin"><i
-                                                      class="social_youtube"></i></a></li>
+                                          <li><a href="https://www.facebook.com/unusia"><i class="social_facebook"></i></a></li>
+                                          <li><a href="https://www.instagram.com/unuindonesia" class="pin"><i class="social_instagram"></i></a></li>
+                                          <li><a href="https://www.youtube.com/c/UnusiaTV" class="pin"><i class="social_youtube"></i></a></li>
                                       </ul>
                                   </div>
                               </div>
@@ -125,20 +117,20 @@
   </footer>
   <!-- JS here -->
 
-  <script src="<?=base_url()?>assets/templates/js/vendor/waypoints.min.js"></script>
-  <script src="<?=base_url()?>assets/templates/js/bootstrap.bundle.min.js"></script>
-  <script src="<?=base_url()?>assets/templates/js/jquery.meanmenu.js"></script>
-  <script src="<?=base_url()?>assets/templates/js/swiper-bundle.min.js"></script>
-  <script src="<?=base_url()?>assets/templates/js/owl.carousel.min.js"></script>
-  <script src="<?=base_url()?>assets/templates/js/jquery.fancybox.min.js"></script>
-  <script src="<?=base_url()?>assets/templates/js/isotope.pkgd.min.js"></script>
-  <script src="<?=base_url()?>assets/templates/js/parallax.min.js"></script>
-  <script src="<?=base_url()?>assets/templates/js/backToTop.js"></script>
-  <script src="<?=base_url()?>assets/templates/js/jquery.counterup.min.js"></script>
-  <script src="<?=base_url()?>assets/templates/js/ajax-form.js"></script>
-  <script src="<?=base_url()?>assets/templates/js/wow.min.js"></script>
-  <script src="<?=base_url()?>assets/templates/js/imagesloaded.pkgd.min.js"></script>
-  <script src="<?=base_url()?>assets/templates/js/main.js"></script>
+  <script src="<?= base_url() ?>assets/templates/js/vendor/waypoints.min.js"></script>
+  <script src="<?= base_url() ?>assets/templates/js/bootstrap.bundle.min.js"></script>
+  <script src="<?= base_url() ?>assets/templates/js/jquery.meanmenu.js"></script>
+  <script src="<?= base_url() ?>assets/templates/js/swiper-bundle.min.js"></script>
+  <script src="<?= base_url() ?>assets/templates/js/owl.carousel.min.js"></script>
+  <script src="<?= base_url() ?>assets/templates/js/jquery.fancybox.min.js"></script>
+  <script src="<?= base_url() ?>assets/templates/js/isotope.pkgd.min.js"></script>
+  <script src="<?= base_url() ?>assets/templates/js/parallax.min.js"></script>
+  <script src="<?= base_url() ?>assets/templates/js/backToTop.js"></script>
+  <script src="<?= base_url() ?>assets/templates/js/jquery.counterup.min.js"></script>
+  <script src="<?= base_url() ?>assets/templates/js/ajax-form.js"></script>
+  <script src="<?= base_url() ?>assets/templates/js/wow.min.js"></script>
+  <script src="<?= base_url() ?>assets/templates/js/imagesloaded.pkgd.min.js"></script>
+  <script src="<?= base_url() ?>assets/templates/js/main.js"></script>
   </body>
   <script>
       var swiper = new Swiper(".mySwiper", {

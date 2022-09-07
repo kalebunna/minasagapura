@@ -23,7 +23,6 @@ class Prestasi extends CI_Controller
         $data['prestasis']     = $this->model_prestasi->get_prestasi();
 
         $this->load->view('admin/dir/header', $data);
-        $this->load->view('admin/dir/navigation');
         $this->load->view('admin/prestasi/index');
         $this->load->view('admin/dir/footer');
     }
@@ -104,7 +103,6 @@ class Prestasi extends CI_Controller
             );
 
             $this->load->view('admin/dir/header', $data);
-            $this->load->view('admin/dir/navigation');
             $this->load->view('admin/prestasi/create');
             $this->load->view('admin/dir/footer');
         }

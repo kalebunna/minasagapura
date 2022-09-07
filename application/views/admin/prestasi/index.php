@@ -1,9 +1,7 @@
 <div class="container-fluid">
-    <a href="<?= base_url('admin/dashboard'); ?>">Admin</a> &raquo; <?= $title; ?>
-    <hr>
-    <h3 class="bold"><?= $title; ?></h3>
-    <div class="mt-4"></div>
 
+    <div class="mt-4"></div>
+    <a href="" class="btn btn-primary mb-3">Tambah Data Baru</a>
     <?php
     if ($this->session->flashdata('success')) {
         $keterangan = $this->session->flashdata('success');

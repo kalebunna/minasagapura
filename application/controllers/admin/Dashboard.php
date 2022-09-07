@@ -13,15 +13,17 @@ class Dashboard extends CI_Controller
 
     public function index()
     {
-        $data = array(
-            'title'         => 'Dashboard',
-            'count_contact' => $this->model_counter->count_contact(),
-            'count_comment' => $this->model_counter->count_comment(),
-            'item'             => $this->model_login->get_admin($this->session->userdata('adminid'))
-        );
+        // $data = array(
+        //     'title'         => 'Dashboard',
+        //     'count_contact' => $this->model_counter->count_contact(),
+        //     'count_comment' => $this->model_counter->count_comment(),
+        //     'item'             => $this->model_login->get_admin($this->session->userdata('adminid'))
+        // );
 
-        $this->load->view('admin/dir/header', $data);
-        $this->load->view('admin/index');
-        $this->load->view('admin/dir/footer');
+        // $this->load->view('admin/dir/header', $data);
+        // $this->load->view('admin/index');
+        // $this->load->view('admin/dir/footer');
+
+        $this->load->view('admin/dir/index');
     }
 }
