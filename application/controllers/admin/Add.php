@@ -41,8 +41,13 @@ class Add extends CI_Controller
     public function delete_image()
     {
         $src = $this->input->post('src');
-        $file_name = str_replace(base_url(), '', $src);
-
+        $base = str_replace('\\', '', base_url());
+        $file_name = str_replace($base, "", $src);
+        // echo json_encode([
+        //     "base" => base_url(),
+        //     "srt" => $src,
+        //     "link" => $file_name
+        // ]);
         if (unlink($file_name)) {
             echo 'File berhasil dihapus';
         }
