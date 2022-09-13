@@ -48,7 +48,7 @@ class Add extends CI_Controller
         //     "srt" => $src,
         //     "link" => $file_name
         // ]);
-        if (unlink($file_name)) {
+        if (unlink(FCPATH . $file_name)) {
             echo 'File berhasil dihapus';
         }
     }
