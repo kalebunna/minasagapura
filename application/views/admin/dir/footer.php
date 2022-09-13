@@ -1,45 +1,45 @@
  </div>
- <!--**********************************
-            Content body end
-        ***********************************-->
-
-
- <!--**********************************
-            Footer start
-        ***********************************-->
- <div class="footer">
-        <div class="copyright">
-               <p>Copyright © Designed &amp; Developed by <a href="https://dexignlab.com/" target="_blank">DexignLab</a> 2021</p>
+ </div>
+ <!-- footer start-->
+ <footer class="footer">
+        <div class="container-fluid">
+               <div class="row">
+                      <div class="col-md-12 footer-copyright text-center">
+                             <p class="mb-0">Copyright 2021 © Cuba theme by pixelstrap </p>
+                      </div>
+               </div>
         </div>
+ </footer>
  </div>
- <!--**********************************
-            Footer end
-        ***********************************-->
+ <!-- latest jquery-->
+ <script src="<?= base_url() ?>assets/templates_admin/js/jquery-3.5.1.min.js"></script>
+ <!-- Bootstrap js-->
+ <script src="<?= base_url() ?>assets/templates_admin/js/bootstrap/bootstrap.bundle.min.js"></script>
+ <!-- feather icon js-->
+ <script src="<?= base_url() ?>assets/templates_admin/js/icons/feather-icon/feather.min.js"></script>
+ <script src="<?= base_url() ?>assets/templates_admin/js/icons/feather-icon/feather-icon.js"></script>
+ <!-- scrollbar js-->
+ <script src="<?= base_url() ?>assets/templates_admin/js/scrollbar/simplebar.js"></script>
+ <script src="<?= base_url() ?>assets/templates_admin/js/scrollbar/custom.js"></script>
 
- <!--**********************************
-           Support ticket button start
-        ***********************************-->
+ <!-- Sidebar jquery-->
+ <script src="<?= base_url() ?>assets/templates_admin/js/config.js"></script>
+ <!-- Plugins JS start-->
+ <script src="<?= base_url() ?>assets/templates_admin/js/sidebar-menu.js"></script>
+ <script src="<?= base_url() ?>assets/templates_admin/js/jquery.ui.min.js"></script>
+ <script src="<?= base_url() ?>assets/templates_admin/js/editor/summernote/summernote.js"></script>
+ <script src="<?= base_url() ?>assets/templates_admin/js/tooltip-init.js"></script>
 
- <!--**********************************
-           Support ticket button end
-        ***********************************-->
 
+ <!-- Plugins JS Ends-->
+ <!-- Theme js-->
+ <script src="<?= base_url() ?>assets/templates_admin/js/script.js"></script>
+ <script src="<?= base_url() ?>assets/templates_admin/js/theme-customizer/customizer.js"></script>
+ <!-- login js-->
+ <!-- Plugin used-->
+ </body>
 
-
- </div>
- <!--**********************************
-        Main wrapper end
-    ***********************************-->
-
- <!--**********************************
-        Scripts
-    ***********************************-->
- <!-- Required vendors -->
- <script src="<?= base_url() ?>/assets/templates_admin/vendor/global/global.min.js"></script>
- <script src="<?= base_url() ?>/assets/templates_admin/vendor/jquery-nice-select/js/jquery.nice-select.min.js"></script>
- <script src="<?= base_url() ?>/assets/templates_admin/js/custom.min.js"></script>
- <script src="<?= base_url() ?>/assets/templates_admin/js/dlabnav-init.js"></script>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.20/summernote-bs5.min.js" integrity="sha512-6F1RVfnxCprKJmfulcxxym1Dar5FsT/V2jiEUvABiaEiFWoQ8yHvqRM/Slf0qJKiwin6IDQucjXuolCfCKnaJQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+ </html>
  <script type="text/javascript">
         $(document).ready(function() {
 
