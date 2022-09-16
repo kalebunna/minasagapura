@@ -1,9 +1,9 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.3.0-dev+20220807.d85cb55ddf
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Jul 24, 2022 at 04:09 PM
+-- Host: localhost:3306
+-- Generation Time: Sep 16, 2022 at 03:35 AM
 -- Server version: 5.7.33
 -- PHP Version: 7.4.19
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `minasagapura`
+-- Database: `minasa`
 --
 
 -- --------------------------------------------------------
@@ -112,6 +112,34 @@ CREATE TABLE `contacts` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `data_sekolah`
+--
+
+CREATE TABLE `data_sekolah` (
+  `id` int(11) NOT NULL,
+  `kepala_sekolah` varchar(30) NOT NULL,
+  `yayasan` varchar(50) NOT NULL,
+  `nama_website` varchar(30) NOT NULL,
+  `nama_sekolah` varchar(40) NOT NULL,
+  `lokasi_lengkap` varchar(50) NOT NULL,
+  `alamat` varchar(50) NOT NULL,
+  `kodepos` varchar(10) NOT NULL,
+  `email` varchar(20) NOT NULL,
+  `telpon` varchar(15) NOT NULL,
+  `tahun_berdiri` int(11) NOT NULL,
+  `googlemaps` varchar(1000) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `data_sekolah`
+--
+
+INSERT INTO `data_sekolah` (`id`, `kepala_sekolah`, `yayasan`, `nama_website`, `nama_sekolah`, `lokasi_lengkap`, `alamat`, `kodepos`, `email`, `telpon`, `tahun_berdiri`, `googlemaps`) VALUES
+(1, 'syauqan wafiqi', 'Nasy\'atul Muta\'allimin', 'MI Nasya Gapura', 'MI Nasy\'atul Muta\'allimin', 'gapura timur gapura sumenep', 'ini adalah alamant\\', '64567', 'minasa@gmail.com', '086123123', 1998, 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2354.685753226775!2d113.96609406353791!3d-6.9982560267223946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd9fbb14108fbeb%3A0x8edf6e17abc1900c!2sMI%20NASA%20Gapura%20Timur!5e0!3m2!1sen!2sid!4v1662352401500!5m2!1sen!2sid');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `ekstrakurikuler`
 --
 
@@ -177,6 +205,13 @@ CREATE TABLE `guru` (
   `aktif` tinyint(1) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `guru`
+--
+
+INSERT INTO `guru` (`id`, `nik`, `nip`, `password`, `nama`, `tmp_lahir`, `tgl_lahir`, `gender`, `agama`, `telepon`, `alamat`, `divisi`, `wali`, `kelas`, `jurusan`, `foto`, `masuk`, `keluar`, `status`, `aktif`) VALUES
+(1, '123123', '12312', '$2y$10$lA1I4yKbm.5EVtbcC.uVxO3WRRNkjxiHYK1OLL3HkOtfI6DOchmQC', 'syauqan wafiqi', 'sumebneop', '2022-09-22', 'L', 'asdf', '', 'asdfasdf', 'asdf', 'T', '0', 'RPL', '300x400.png', 2022, 2022, 'aktif', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -195,7 +230,7 @@ CREATE TABLE `histories` (
 --
 
 INSERT INTO `histories` (`id`, `description`, `content`, `modified`) VALUES
-(1, 'Sejarah pendirian Yayasan Perguruan Pelita Pematangsiantar', '<h2><span xss=\"removed\">Sejarah Pendirian Yayasan</span></h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eros leo, pharetra sit amet dictum ac, porta ultricies diam. Nullam tellus erat, dignissim non tempus a, vestibulum nec sem. Maecenas a nunc at eros fringilla mollis quis et neque. Ut fermentum ornare tincidunt. Vivamus odio ante, pellentesque eget venenatis nec, vestibulum et orci. Vivamus consequat nulla vitae sapien rutrum, hendrerit lacinia elit lacinia. Nunc vitae consectetur enim. Vestibulum ultrices consequat libero ut venenatis. Phasellus eu commodo sem, eget euismod nisl. In hac habitasse platea dictumst. Fusce blandit ut augue in elementum. Vestibulum facilisis libero ut risus tempus rutrum. Ut eu luctus eros. Donec ut metus ac sapien auctor placerat. Nullam sed velit eget risus efficitur porta vel quis libero.</p>', '2019-09-08 09:03:14');
+(1, 'Sejarah pendirian MI Nasy\'atul Muta\'allimin', '<h2><span xss=\"removed\">Sejarah Pendirian Yayasan</span></h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eros leo, pharetra sit amet dictum ac, porta ultricies diam. Nullam tellus erat, dignissim non tempus a, vestibulum nec sem. Maecenas a nunc at eros fringilla mollis quis et neque. Ut fermentum ornare tincidunt. Vivamus odio ante, pellentesque eget venenatis nec, vestibulum et orci. Vivamus consequat nulla vitae sapien rutrum, hendrerit lacinia elit lacinia. Nunc vitae consectetur enim. Vestibulum ultrices consequat libero ut venenatis. Phasellus eu commodo sem, eget euismod nisl. In hac habitasse platea dictumst. Fusce blandit ut augue in elementum. Vestibulum facilisis libero ut risus tempus rutrum. Ut eu luctus eros. Donec ut metus ac sapien auctor placerat. Nullam sed velit eget risus efficitur porta vel quis libero.</p>', '2022-09-13 03:48:00');
 
 -- --------------------------------------------------------
 
@@ -247,6 +282,17 @@ INSERT INTO `jurusan` (`id`, `teachersid`, `name`, `image`, `description`, `last
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `kelas`
+--
+
+CREATE TABLE `kelas` (
+  `id_kelas` int(11) NOT NULL,
+  `nama_kelas` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `logomotto`
 --
 
@@ -263,7 +309,7 @@ CREATE TABLE `logomotto` (
 --
 
 INSERT INTO `logomotto` (`id`, `description`, `image`, `content`, `modified`) VALUES
-(1, 'Makna dari Logo dan Motto SMK Pelita Pematangsiantar', '', '<h2>Selamat datang</h2>\r\n\r\n<p>Nam in sollicitudin turpis. Integer in sapien ac dui volutpat interdum quis et dolor. Proin id mi faucibus, facilisis urna id, egestas tortor. Aliquam elementum pharetra accumsan. Sed ullamcorper lorem at mi dignissim, quis mollis massa mattis. Proin lorem urna, lobortis at turpis et, pharetra interdum neque. Vivamus urna velit, molestie sed tortor sed, tincidunt tempor metus.</p>\r\n\r\n<h2>Makna logo</h2>\r\n\r\n<p>Donec quis dui dolor. Sed a turpis id elit aliquet accumsan. Phasellus augue diam, ultrices sagittis tempor non, tincidunt in neque. Vestibulum nec scelerisque elit. Nunc aliquet lectus vel enim venenatis efficitur. Phasellus quis varius risus, a rutrum ligula. Praesent quis ex in velit fermentum condimentum. Fusce congue, tellus vel ultrices pretium, sapien libero maximus augue, eu porttitor lacus risus non lorem. Donec sed lorem sed ante pellentesque semper vel non odio. Integer eu lorem eu tellus iaculis eleifend ac in metus. Cras hendrerit dictum imperdiet.</p>\r\n\r\n<h2>Motto</h2>\r\n\r\n<p>Nam in sollicitudin turpis. Integer in sapien ac dui volutpat interdum quis et dolor. Proin id mi faucibus, facilisis urna id, egestas tortor. Aliquam elementum pharetra accumsan. Sed ullamcorper lorem at mi dignissim, quis mollis massa mattis. Proin lorem urna, lobortis at turpis et, pharetra interdum neque. Vivamus urna velit, molestie sed tortor sed, tincidunt tempor metus.</p>', '2019-09-26 05:38:49');
+(1, 'Makna dari Logo dan Motto SMK Pelita Pematangsiantar', '', '<h2>sadas<br></h2><h2>Selamat datang</h2> <p>Nam in sollicitudin turpis. Integer in sapien ac dui volutpat interdum quis et dolor. Proin id mi faucibus, facilisis urna id, egestas tortor. Aliquam elementum pharetra accumsan. Sed ullamcorper lorem at mi dignissim, quis mollis massa mattis. Proin lorem urna, lobortis at turpis et, pharetra interdum neque. Vivamus urna velit, molestie sed tortor sed, tincidunt tempor metus.</p> <h2>Makna logo</h2> <p>Donec quis dui dolor. Sed a turpis id elit aliquet accumsan. Phasellus augue diam, ultrices sagittis tempor non, tincidunt in neque. Vestibulum nec scelerisque elit. Nunc aliquet lectus vel enim venenatis efficitur. Phasellus quis varius risus, a rutrum ligula. Praesent quis ex in velit fermentum condimentum. Fusce congue, tellus vel ultrices pretium, sapien libero maximus augue, eu porttitor lacus risus non lorem. Donec sed lorem sed ante pellentesque semper vel non odio. Integer eu lorem eu tellus iaculis eleifend ac in metus. Cras hendrerit dictum imperdiet.</p> <h2>Motto</h2> <p>Nam in sollicitudin turpis. Integer in sapien ac dui volutpat interdum quis et dolor. Proin id mi faucibus, facilisis urna id, egestas tortor. Aliquam elementum pharetra accumsan. Sed ullamcorper lorem at mi dignissim, quis mollis massa mattis. Proin lorem urna, lobortis at turpis et, pharetra interdum neque. Vivamus urna velit, molestie sed tortor sed, tincidunt tempor metus.</p>', '2022-09-13 03:42:31');
 
 -- --------------------------------------------------------
 
@@ -345,7 +391,7 @@ CREATE TABLE `struktur` (
 --
 
 INSERT INTO `struktur` (`id`, `image`, `description`, `content`, `modified`) VALUES
-(1, '1_1567936299_5d74cf2b385cf_20190908115139_n.JPG', 'Struktur Organisasi SMK Pelita Pematangsiantar', '<p><span xss=removed>Struktur Organisasi SMK Pelita Pematangsiantar</span></p>', '2019-09-08 09:51:39');
+(1, '_1662352169_63157b29c7186_20220905042929_n.png', 'Struktur Organisasi SMK Pelita Pematangsiantar', '<p><span xss=removed>Struktur Organisasi SMK Pelita Pematangsiantar</span></p>', '2022-09-04 21:29:29');
 
 -- --------------------------------------------------------
 
@@ -386,7 +432,7 @@ CREATE TABLE `visimisi` (
 --
 
 INSERT INTO `visimisi` (`id`, `description`, `content`, `modified`) VALUES
-(1, 'Visi dan Misi SMK Pelita Pematangsiantar dalam dunia pendidikan', '<h2>Visi dan Misi SMK Pelita</h2>\r\n\r\n<p>Morbi ut nisl odio. In sed est molestie, consequat tortor quis, rhoncus nunc. Donec vitae tellus in risus luctus pulvinar at sed dui. Cras nec viverra eros. Integer efficitur orci id orci pharetra, a consectetur odio sodales. Curabitur faucibus bibendum magna eget efficitur. Donec maximus sapien nulla, id tempus est lobortis in.</p>\r\n\r\n<h2>Visi</h2>\r\n\r\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eros leo, pharetra sit amet dictum ac, porta ultricies diam. Nullam tellus erat, dignissim non tempus a, vestibulum nec sem. Maecenas a nunc at eros fringilla mollis quis et neque. Ut fermentum ornare tincidunt. Vivamus odio ante, pellentesque eget venenatis nec, vestibulum et orci. Vivamus consequat nulla vitae sapien rutrum, hendrerit lacinia elit lacinia. Nunc vitae consectetur enim. Vestibulum ultrices consequat libero ut venenatis. Phasellus eu commodo sem, eget euismod nisl. In hac habitasse platea dictumst. Fusce blandit ut augue in elementum. Vestibulum facilisis libero ut risus tempus rutrum. Ut eu luctus eros. Donec ut metus ac sapien auctor placerat. Nullam sed velit eget risus efficitur porta vel quis libero.</p>\r\n\r\n<h2>Misi</h2>\r\n\r\n<p>Sed feugiat dignissim consectetur. Aenean non ipsum sit amet arcu scelerisque lobortis. Curabitur auctor turpis in lorem congue, at iaculis odio vestibulum. Nam vel turpis blandit, placerat nulla id, hendrerit justo. Nulla sit amet urna neque. Nullam sagittis magna sit amet porttitor malesuada. In ultricies dictum pellentesque. Nullam tincidunt in magna et ultricies. Praesent euismod, est eget tempor suscipit, nisl erat venenatis neque, a vestibulum ex nulla vel urna. Fusce placerat mauris ut velit commodo aliquam. Praesent venenatis eget felis at eleifend. In eleifend nisi metus, sit amet sollicitudin dolor laoreet sit amet. Donec ultrices sollicitudin commodo. Nullam placerat tempor ultricies. Vestibulum tincidunt id enim euismod euismod. Sed et metus sit amet sem fermentum placerat non et odio.</p>\r\n\r\n<h2>Akhir kata</h2>\r\n\r\n<p>Donec quis dui dolor. Sed a turpis id elit aliquet accumsan. Phasellus augue diam, ultrices sagittis tempor non, tincidunt in neque. Vestibulum nec scelerisque elit. Nunc aliquet lectus vel enim venenatis efficitur. Phasellus quis varius risus, a rutrum ligula. Praesent quis ex in velit fermentum condimentum. Fusce congue, tellus vel ultrices pretium, sapien libero maximus augue, eu porttitor lacus risus non lorem. Donec sed lorem sed ante pellentesque semper vel non odio. Integer eu lorem eu tellus iaculis eleifend ac in metus. Cras hendrerit dictum imperdiet.</p>', '2019-09-26 05:38:29');
+(1, 'Visi dan Misi SMK Pelita Pematangsiantar dalam dunia pendidikan', '<h2><br></h2> <p>Morbi ut nisl odio. In sed est molestie, consequat tortor quis, rhoncus nunc. Donec vitae tellus in risus luctus pulvinar at sed dui. Cras nec viverra eros. Integer efficitur orci id orci pharetra, a consectetur odio sodales. Curabitur faucibus bibendum magna eget efficitur. Donec maximus sapien nulla, id tempus est lobortis in.</p> <h2>Visi</h2> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eros leo, pharetra sit amet dictum ac, porta ultricies diam. Nullam tellus erat, dignissim non tempus a, vestibulum nec sem. Maecenas a nunc at eros fringilla mollis quis et neque. Ut fermentum ornare tincidunt. Vivamus odio ante, pellentesque eget venenatis nec, vestibulum et orci. Vivamus consequat nulla vitae sapien rutrum, hendrerit lacinia elit lacinia. Nunc vitae consectetur enim. Vestibulum ultrices consequat libero ut venenatis. Phasellus eu commodo sem, eget euismod nisl. In hac habitasse platea dictumst. Fusce blandit ut augue in elementum. Vestibulum facilisis libero ut risus tempus rutrum. Ut eu luctus eros. Donec ut metus ac sapien auctor placerat. Nullam sed velit eget risus efficitur porta vel quis libero.</p> <h2>Misi</h2> <p>Sed feugiat dignissim consectetur. Aenean non ipsum sit amet arcu scelerisque lobortis. Curabitur auctor turpis in lorem congue, at iaculis odio vestibulum. Nam vel turpis blandit, placerat nulla id, hendrerit justo. Nulla sit amet urna neque. Nullam sagittis magna sit amet porttitor malesuada. In ultricies dictum pellentesque. Nullam tincidunt in magna et ultricies. Praesent euismod, est eget tempor suscipit, nisl erat venenatis neque, a vestibulum ex nulla vel urna. Fusce placerat mauris ut velit commodo aliquam. Praesent venenatis eget felis at eleifend. In eleifend nisi metus, sit amet sollicitudin dolor laoreet sit amet. Donec ultrices sollicitudin commodo. Nullam placerat tempor ultricies. Vestibulum tincidunt id enim euismod euismod. Sed et metus sit amet sem fermentum placerat non et odio.</p> <h2>Akhir kata</h2> <p>Donec quis dui dolor. Sed a turpis id elit aliquet accumsan. Phasellus augue diam, ultrices sagittis tempor non, tincidunt in neque. Vestibulum nec scelerisque elit. Nunc aliquet lectus vel enim venenatis efficitur. Phasellus quis varius risus, a rutrum ligula. Praesent quis ex in velit fermentum condimentum. Fusce congue, tellus vel ultrices pretium, sapien libero maximus augue, eu porttitor lacus risus non lorem. Donec sed lorem sed ante pellentesque semper vel non odio. Integer eu lorem eu tellus iaculis eleifend ac in metus. Cras hendrerit dictum imperdiet.</p>', '2022-09-04 21:28:17');
 
 -- --------------------------------------------------------
 
@@ -437,6 +483,12 @@ ALTER TABLE `contacts`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `data_sekolah`
+--
+ALTER TABLE `data_sekolah`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `ekstrakurikuler`
 --
 ALTER TABLE `ekstrakurikuler`
@@ -472,6 +524,12 @@ ALTER TABLE `impressium`
 --
 ALTER TABLE `jurusan`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `kelas`
+--
+ALTER TABLE `kelas`
+  ADD PRIMARY KEY (`id_kelas`);
 
 --
 -- Indexes for table `logomotto`
@@ -551,6 +609,12 @@ ALTER TABLE `contacts`
   MODIFY `id` int(5) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `data_sekolah`
+--
+ALTER TABLE `data_sekolah`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `ekstrakurikuler`
 --
 ALTER TABLE `ekstrakurikuler`
@@ -566,7 +630,7 @@ ALTER TABLE `galeri`
 -- AUTO_INCREMENT for table `guru`
 --
 ALTER TABLE `guru`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `histories`
@@ -585,6 +649,12 @@ ALTER TABLE `impressium`
 --
 ALTER TABLE `jurusan`
   MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `kelas`
+--
+ALTER TABLE `kelas`
+  MODIFY `id_kelas` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `logomotto`
