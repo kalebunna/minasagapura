@@ -1,10 +1,10 @@
 <div class="container-fluid">
 
-    <div class="row page-titles">
+    <!-- <div class="row page-titles">
         <ol class="breadcrumb">
             <li class="breadcrumb-item active"><a href="javascript:void(0)"><?= $title; ?></a></li>
         </ol>
-    </div>
+    </div> -->
     <div class="card card-body shadow-sm mt-4">
         <?php
         if ($this->session->flashdata('success')) {
