@@ -24,7 +24,7 @@
     <link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/templates_admin/css/vendors/feather-icon.css">
     <!-- Plugins css start-->
     <link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/templates_admin/css/vendors/scrollbar.css">
-    <link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/templates_admin/css/vendors/summernote.css">
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
     <!-- Plugins css Ends-->
     <!-- Bootstrap css-->
     <link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/templates_admin/css/vendors/bootstrap.css">

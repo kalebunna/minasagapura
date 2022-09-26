@@ -27,7 +27,7 @@
  <!-- Plugins JS start-->
  <script src="<?= base_url() ?>assets/templates_admin/js/sidebar-menu.js"></script>
  <script src="<?= base_url() ?>assets/templates_admin/js/jquery.ui.min.js"></script>
- <script src="<?= base_url() ?>assets/templates_admin/js/editor/summernote/summernote.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
  <script src="<?= base_url() ?>assets/templates_admin/js/tooltip-init.js"></script>
 
 
@@ -66,10 +66,15 @@
                              }
                       }
                });
-               $('.dropdown-toggle').dropdown();
-               $(document).click(function() {
-                      $('.dropdown-toggle').removeClass('show');
-               });
+               $("button#btnToggleStyle").on("click", function(e) {
+                      e.preventDefault();
+                      var styleEle = $("style#fixed");
+                      if (styleEle.length == 0)
+                             $("<style id=\"fixed\">.note-editor .dropdown-toggle::after { all: unset; } .note-editor .note-dropdown-menu { box-sizing: content-box; } .note-editor .note-modal-footer { box-sizing: content-box; }</style>")
+                             .prependTo("body");
+                      else
+                             styleEle.remove();
+               })
 
                function uploadImage(image) {
                       var data = new FormData();
