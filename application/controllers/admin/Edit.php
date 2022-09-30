@@ -47,10 +47,11 @@ class Edit extends CI_Controller
                 'sejarah'         => $this->model_page->sejarah()
             );
 
-            $this->load->view('admin/dir/header', $data);
+            // $this->load->view('admin/dir/header', $data);
             // $this->load->view('admin/dir/navigation');
-            $this->load->view('admin/edit/sejarah');
-            $this->load->view('admin/dir/footer');
+            // $this->load->view('admin/edit/sejarah');
+            $this->load->view("admin/dir/index");
+            // $this->load->view('admin/dir/footer');
         }
     }
 

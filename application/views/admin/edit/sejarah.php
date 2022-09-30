@@ -34,5 +34,5 @@
         <button class="btn btn-primary mt-3" id="btn">Posting</button>
         <?= form_close(); ?>
     </div>
-    <?php include(APPPATH . 'views/admin/dir/copyright.php'); ?>
+    <!-- <?php include(APPPATH . 'views/admin/dir/copyright.php'); ?> -->
 </div>
