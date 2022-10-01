@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
 /*
 | -------------------------------------------------------------------------
@@ -50,16 +50,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 
-$route['jurusan/(:any)']  			= 'jurusan/view/$1';
-$route['prestasi/(:any)'] 			= 'prestasi/view/$1';
-$route['p/(:any)']   				= 'galeri/p/$1';
-$route['ekstrakurikuler/(:any)'] 	= 'ekstrakurikuler/view/$1';
-$route['article/komentar'] 			= 'article/komentar';
-$route['article/(:any)']   			= 'article/view/$1';
-$route['sitemap\.xml'] 				= 'sitemap';
+$route['jurusan/(:any)']              = 'jurusan/view/$1';
+$route['prestasi/(:any)']             = 'prestasi/view/$1';
+$route['p/(:any)']                   = 'galeri/p/$1';
+$route['ekstrakurikuler/(:any)']     = 'ekstrakurikuler/view/$1';
+$route['article/komentar']             = 'article/komentar';
+$route['article/(:any)']               = 'article/view/$1';
+$route['sitemap\.xml']                 = 'sitemap';
 $route['page/visi-misi']            = 'page/visimisi';
 $route['page/logo-motto']           = 'page/logomotto';
+$route['wp-admin'] = 'admin/login';
 
-$route['default_controller'] 		= 'home';
-$route['404_override'] 				= 'page/error';
-$route['translate_uri_dashes'] 		= FALSE;
+$route['default_controller']         = 'home';
+$route['404_override']                 = 'page/error';
+$route['translate_uri_dashes']         = FALSE;
