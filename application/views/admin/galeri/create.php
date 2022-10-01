@@ -12,14 +12,9 @@
  <div class="container-fluid">
      <div class="card card-body">
          <?php
+
             if ($this->session->flashdata('success')) {
-                $keterangan = $this->session->flashdata('success');
-                echo '<div class="alert alert-primary alert-dismissible fade show" role="alert">';
-                echo '<a class="close" data-dismiss="alert" aria-label="close">';
-                echo '<span aria-hidden="true">&times;</span>';
-                echo '</a>';
-                echo $keterangan;
-                echo '</div>';
+                echo $this->session->flashdata('success');
             }
             ?>
          <?= form_open_multipart('admin/galeri/create', 'onsubmit="disable()"'); ?>

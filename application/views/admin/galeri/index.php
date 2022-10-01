@@ -17,10 +17,7 @@
   <div class="container-fluid">
       <?php
         if ($this->session->flashdata('success')) {
-            $keterangan = $this->session->flashdata('success');
-            echo '<div class="alert alert-success dark alert-dismissible fade show" role="alert"><strong>BERHASIL</strong>' . $keterangan . '
-                      <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>';
+            echo $this->session->flashdata('success');
         }
         ?>
       <div class="card">

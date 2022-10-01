@@ -14,12 +14,9 @@
           <?php
             if ($this->session->flashdata('success')) {
                 $keterangan = $this->session->flashdata('success');
-                echo '<div class="alert alert-primary alert-dismissible fade show" role="alert">';
-                echo '<a class="close" data-dismiss="alert" aria-label="close">';
-                echo '<span aria-hidden="true">&times;</span>';
-                echo '</a>';
-                echo $keterangan;
-                echo '</div>';
+                echo '<div class="alert alert-success dark alert-dismissible fade show" role="alert"><strong>BERHASIL</strong>' . $keterangan . '
+                      <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>';
             }
             ?>
           <?= form_open_multipart('admin/galeri/update/' . $galeri['id'], 'onsubmit="disable()"'); ?>

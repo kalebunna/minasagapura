@@ -73,25 +73,19 @@ class Galeri extends CI_Controller
 
                     $this->model_galeri->create($title, $description, $nameimage);
 
-                    $this->session->set_flashdata('success', 'Data berhasil ditambahkan');
+                    $this->session->set_flashdata('success', alertCustom("add"));
                     redirect('admin/galeri', 'refresh');
                 } else {
-                    $this->session->set_flashdata('success', 'Gambar gagal diupload');
+                    $this->session->set_flashdata('success', alertCustom("err", "Gambar Gagal Di Upload"));
+                    var_dump($this->session->flashdata('success'));
                     redirect('admin/galeri/create', 'refresh');
                 }
             } else {
-                $this->session->set_flashdata('success', 'Gambar tidak boleh kosong');
+                $this->session->set_flashdata('success', alertCustom("err", "Gambar Tidak Boleh Kosong"));
                 redirect('admin/galeri/create', 'refresh');
             }
         } else {
-            $data = array(
-                'title'         => 'Tambah Galeri',
-                'count_contact' => $this->model_counter->count_contact(),
-                'count_comment' => $this->model_counter->count_comment(),
-                'content' => "admin/galeri/create"
-            );
-
-            $this->load->view('admin/dir/index', $data);
+            redirect("admin/galeri");
         }
     }
 
