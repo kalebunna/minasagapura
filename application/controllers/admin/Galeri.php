@@ -74,7 +74,7 @@ class Galeri extends CI_Controller
                     $this->model_galeri->create($title, $description, $nameimage);
 
                     $this->session->set_flashdata('success', 'Data berhasil ditambahkan');
-                    redirect('admin/galeri/create', 'refresh');
+                    redirect('admin/galeri', 'refresh');
                 } else {
                     $this->session->set_flashdata('success', 'Gambar gagal diupload');
                     redirect('admin/galeri/create', 'refresh');
@@ -87,13 +87,11 @@ class Galeri extends CI_Controller
             $data = array(
                 'title'         => 'Tambah Galeri',
                 'count_contact' => $this->model_counter->count_contact(),
-                'count_comment' => $this->model_counter->count_comment()
+                'count_comment' => $this->model_counter->count_comment(),
+                'content' => "admin/galeri/create"
             );
 
-            $this->load->view('admin/dir/header', $data);
-            $this->load->view('admin/dir/navigation');
-            $this->load->view('admin/galeri/create');
-            $this->load->view('admin/dir/footer');
+            $this->load->view('admin/dir/index', $data);
         }
     }
 
@@ -172,13 +170,11 @@ class Galeri extends CI_Controller
                 'title'         => 'Update Galeri',
                 'count_contact' => $this->model_counter->count_contact(),
                 'count_comment' => $this->model_counter->count_comment(),
-                'galeri'        => $this->model_galeri->get_by_id($id)
+                'galeri'        => $this->model_galeri->get_by_id($id),
+                'content' => "admin/galeri/update"
             );
 
-            $this->load->view('admin/dir/header', $data);
-            $this->load->view('admin/dir/navigation');
-            $this->load->view('admin/galeri/update');
-            $this->load->view('admin/dir/footer');
+            $this->load->view('admin/dir/index', $data);
         }
     }
 

@@ -84,17 +84,6 @@
         <div class="page-body-wrapper">
             <?php $this->load->view('admin/dir/navigation'); ?>
             <div class="page-body">
-                <div class="container-fluid">
-                    <div class="page-title">
-                        <div class="row">
-                            <div class="col-6">
-                                <h3>
-                                    <?= $title ?>
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <?php $this->load->view($content); ?>
             </div>
         </div>
