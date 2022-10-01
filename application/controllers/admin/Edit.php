@@ -44,14 +44,11 @@ class Edit extends CI_Controller
                 'title'         => 'Edit Sejarah',
                 'count_contact' => $this->model_counter->count_contact(),
                 'count_comment' => $this->model_counter->count_comment(),
-                'sejarah'         => $this->model_page->sejarah()
+                'sejarah'         => $this->model_page->sejarah(),
+                'content'        => "admin/edit/sejarah"
             );
 
-            // $this->load->view('admin/dir/header', $data);
-            // $this->load->view('admin/dir/navigation');
-            // $this->load->view('admin/edit/sejarah');
-            $this->load->view("admin/dir/index");
-            // $this->load->view('admin/dir/footer');
+            $this->load->view("admin/dir/index", $data);
         }
     }
 
@@ -88,13 +85,11 @@ class Edit extends CI_Controller
                 'title'         => 'Edit Visi dan Misi',
                 'count_contact' => $this->model_counter->count_contact(),
                 'count_comment' => $this->model_counter->count_comment(),
-                'visimisi'         => $this->model_page->visimisi()
+                'visimisi'         => $this->model_page->visimisi(),
+                'content' => "admin/edit/visimisi"
             );
 
-            $this->load->view('admin/dir/header', $data);
-            // $this->load->view('admin/dir/navigation');
-            $this->load->view('admin/edit/visimisi');
-            $this->load->view('admin/dir/footer');
+            $this->load->view('admin/dir/index', $data);
         }
     }
 
@@ -131,13 +126,10 @@ class Edit extends CI_Controller
                 'title'         => 'Edit Logo dan Motto',
                 'count_contact' => $this->model_counter->count_contact(),
                 'count_comment' => $this->model_counter->count_comment(),
-                'logomotto'        => $this->model_page->logomotto()
+                'logomotto'        => $this->model_page->logomotto(),
+                'content' => "admin/edit/logomotto"
             );
-
-            $this->load->view('admin/dir/header', $data);
-            // $this->load->view('admin/dir/navigation');
-            $this->load->view('admin/edit/logomotto');
-            $this->load->view('admin/dir/footer');
+            $this->load->view('admin/dir/index', $data);
         }
     }
 
@@ -201,13 +193,11 @@ class Edit extends CI_Controller
                 'title'            => 'Edit Struktur Organisasi',
                 'count_contact' => $this->model_counter->count_contact(),
                 'count_comment' => $this->model_counter->count_comment(),
-                'struktur'        => $this->model_page->struktur()
+                'struktur'        => $this->model_page->struktur(),
+                "content" => 'admin/edit/struktur'
             );
 
-            $this->load->view('admin/dir/header', $data);
-            // $this->load->view('admin/dir/navigation');
-            $this->load->view('admin/edit/struktur');
-            $this->load->view('admin/dir/footer');
+            $this->load->view('admin/dir/index', $data);
         }
     }
 
@@ -245,13 +235,11 @@ class Edit extends CI_Controller
                 'title'         => 'Edit Kata Sambutan Yayasan',
                 'count_contact' => $this->model_counter->count_contact(),
                 'count_comment' => $this->model_counter->count_comment(),
-                'sambutan'        => $this->model_page->sambutan_yayasan()
+                'sambutan'        => $this->model_page->sambutan_yayasan(),
+                'content' => "admin/edit/sambutan_yayasan"
             );
 
             $this->load->view('admin/dir/header', $data);
-            // $this->load->view('admin/dir/navigation');
-            $this->load->view('admin/edit/sambutan_yayasan');
-            $this->load->view('admin/dir/footer');
         }
     }
 
@@ -311,13 +299,11 @@ class Edit extends CI_Controller
                 'title'         => 'Edit Kata Sambutan Kepala Sekolah',
                 'count_contact' => $this->model_counter->count_contact(),
                 'count_comment' => $this->model_counter->count_comment(),
-                'sambutan'        => $this->model_page->sambutan_kepsek()
+                'sambutan'        => $this->model_page->sambutan_kepsek(),
+                "content" => 'admin/edit/sambutan_kepsek'
             );
 
-            $this->load->view('admin/dir/header', $data);
-            // $this->load->view('admin/dir/navigation');
-            $this->load->view('admin/edit/sambutan_kepsek');
-            $this->load->view('admin/dir/footer');
+            $this->load->view('admin/dir/index', $data);
         }
     }
 }

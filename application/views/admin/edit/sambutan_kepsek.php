@@ -1,7 +1,5 @@
 <div class="container-fluid">
-    <a href="<?= base_url('admin/dashboard'); ?>">Admin</a> &raquo; <?= $title; ?>
-    <hr>
-    <h3 class="bold"><?= $title; ?></h3>
+
     <div class="card card-body shadow-sm mt-4">
         <?php
         if ($this->session->flashdata('success')) {
@@ -9,8 +7,7 @@
             echo '<div class="alert alert-primary alert-dismissible fade show" role="alert">';
             echo '<a class="close" data-dismiss="alert" aria-label="close">';
             echo '<span aria-hidden="true">&times;</span>';
-            echo '</a>';
-            echo $keterangan;
+            echo '</a>' . $keterangan;
             echo '</div>';
         }
         ?>

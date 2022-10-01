@@ -1,7 +1,4 @@
 <div class="container-fluid">
-    <a href="<?= base_url('admin/dashboard'); ?>">Admin</a> &raquo; <?= $title; ?>
-    <hr>
-    <h3 class="bold"><?= $title; ?></h3>
     <div class="card card-body shadow-sm mt-4">
         <?php
         if ($this->session->flashdata('success')) {

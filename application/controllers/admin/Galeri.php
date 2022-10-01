@@ -17,15 +17,13 @@ class Galeri extends CI_Controller
         $data = array(
             'title'         => 'Galeri',
             'count_contact' => $this->model_counter->count_contact(),
-            'count_comment' => $this->model_counter->count_comment()
+            'count_comment' => $this->model_counter->count_comment(),
+            'content' => "admin/galeri/index"
         );
 
         $data['galeris']     = $this->model_galeri->read();
 
-        $this->load->view('admin/dir/header', $data);
-        $this->load->view('admin/dir/navigation');
-        $this->load->view('admin/galeri/index');
-        $this->load->view('admin/dir/footer');
+        $this->load->view('admin/dir/index', $data);
     }
 
     public function create()
