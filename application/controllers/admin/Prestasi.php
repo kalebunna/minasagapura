@@ -17,14 +17,13 @@ class Prestasi extends CI_Controller
         $data = array(
             'title'         => 'Prestasi',
             'count_contact' => $this->model_counter->count_contact(),
-            'count_comment' => $this->model_counter->count_comment()
+            'count_comment' => $this->model_counter->count_comment(),
+            'content' => 'admin/prestasi/index'
         );
 
         $data['prestasis']     = $this->model_prestasi->get_prestasi();
 
-        $this->load->view('admin/dir/header', $data);
-        $this->load->view('admin/prestasi/index');
-        $this->load->view('admin/dir/footer');
+        $this->load->view('admin/dir/index', $data);
     }
 
     public function create()
@@ -85,26 +84,25 @@ class Prestasi extends CI_Controller
 
                     $this->model_prestasi->set_prestasi($title, $description, $nameimage, $content);
 
-                    $this->session->set_flashdata('success', 'Prestasi berhasil ditambahkan');
-                    redirect('admin/prestasi/create', 'refresh');
+                    $this->session->set_flashdata('success', alertCustom("add"));
+                    redirect('admin/prestasi/index', 'refresh');
                 } else {
-                    $this->session->set_flashdata('success', 'Gambar gagal diupload');
+                    $this->session->set_flashdata('success', alertCustom("err", "Gambar Gagal Di Upload"));
                     redirect('admin/prestasi/create', 'refresh');
                 }
             } else {
-                $this->session->set_flashdata('success', 'Gambar tidak boleh kosong');
+                $this->session->set_flashdata('success', alertCustom("err", "Gambar Tidak Boleh Kosong"));
                 redirect('admin/prestasi/create', 'refresh');
             }
         } else {
             $data = array(
                 'title'         => 'Tambah Prestasi',
                 'count_contact' => $this->model_counter->count_contact(),
-                'count_comment' => $this->model_counter->count_comment()
+                'count_comment' => $this->model_counter->count_comment(),
+                'content' => 'admin/prestasi/create'
             );
 
-            $this->load->view('admin/dir/header', $data);
-            $this->load->view('admin/prestasi/create');
-            $this->load->view('admin/dir/footer');
+            $this->load->view('admin/dir/index', $data);
         }
     }
 
@@ -169,10 +167,10 @@ class Prestasi extends CI_Controller
 
                     $this->model_prestasi->update_image($id, $title, $description, $nameimage, $content);
 
-                    $this->session->set_flashdata('success', 'Prestasi berhasil ditambahkan');
-                    redirect('admin/prestasi/update/' . $id, 'refresh');
+                    $this->session->set_flashdata('success', alertCustom("update"));
+                    redirect('admin/prestasi/update/', 'refresh');
                 } else {
-                    $this->session->set_flashdata('success', 'Gambar gagal diupload');
+                    $this->session->set_flashdata('success', alertCustom("err", "Data Gambar Gagal Di Perbarui"));
                     redirect('admin/prestasi/update/' . $id, 'refresh');
                 }
             } else {
@@ -182,7 +180,7 @@ class Prestasi extends CI_Controller
 
                 $this->model_prestasi->update_no_image($id, $title, $description, $content);
 
-                $this->session->set_flashdata('success', 'Prestasi berhasil ditambahkan');
+                $this->session->set_flashdata('success', alertCustom("update"));
                 redirect('admin/prestasi/update/' . $id, 'refresh');
             }
         } else {
@@ -190,13 +188,11 @@ class Prestasi extends CI_Controller
                 'title'         => 'Update Prestasi',
                 'count_contact' => $this->model_counter->count_contact(),
                 'count_comment' => $this->model_counter->count_comment(),
-                'prestasi'      => $this->model_prestasi->get_by_id($id)
+                'prestasi'      => $this->model_prestasi->get_by_id($id),
+                'content' => 'admin/prestasi/update'
             );
 
-            $this->load->view('admin/dir/header', $data);
-            $this->load->view('admin/dir/navigation');
-            $this->load->view('admin/prestasi/update');
-            $this->load->view('admin/dir/footer');
+            $this->load->view('admin/dir/index', $data);
         }
     }
 
@@ -206,13 +202,14 @@ class Prestasi extends CI_Controller
 
         if ($this->form_validation->run() == TRUE) {
             $id = $this->input->post('id');
+            $data = $this->model_prestasi->get_by_id($id);
             $this->model_prestasi->delete($id);
+            // var_dump($data);
+            unlink('images/prestasi/' . $data['image']);
+            unlink('images/prestasi/large/' . $data['image']);
+            unlink('images/prestasi/medium/' . $data['image']);
 
-            unlink('images/prestasi/' . $data['prestasi_item']['image']);
-            unlink('images/prestasi/large/' . $data['prestasi_item']['image']);
-            unlink('images/prestasi/medium/' . $data['prestasi_item']['image']);
-
-            $this->session->set_flashdata('success', 'Prestasi sudah dihapus');
+            $this->session->set_flashdata('success', alertCustom("delete"));
             redirect('admin/prestasi', 'refresh');
         } else {
             show_404();

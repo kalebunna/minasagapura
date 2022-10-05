@@ -77,7 +77,6 @@ class Galeri extends CI_Controller
                     redirect('admin/galeri', 'refresh');
                 } else {
                     $this->session->set_flashdata('success', alertCustom("err", "Gambar Gagal Di Upload"));
-                    var_dump($this->session->flashdata('success'));
                     redirect('admin/galeri/create', 'refresh');
                 }
             } else {
@@ -85,7 +84,14 @@ class Galeri extends CI_Controller
                 redirect('admin/galeri/create', 'refresh');
             }
         } else {
-            redirect("admin/galeri");
+            $data = array(
+                'title'         => 'Tambah Galeri',
+                'count_contact' => $this->model_counter->count_contact(),
+                'count_comment' => $this->model_counter->count_comment(),
+                'content' => "admin/galeri/create"
+            );
+
+            $this->load->view('admin/dir/index', $data);
         }
     }
 
@@ -143,10 +149,10 @@ class Galeri extends CI_Controller
 
                     $this->model_galeri->update_image($id, $title, $description, $nameimage, $tampilkan);
 
-                    $this->session->set_flashdata('success', 'Galeri berhasil diupdate');
-                    redirect('admin/galeri/update/' . $id, 'refresh');
+                    $this->session->set_flashdata('success', alertCustom("update"));
+                    redirect('admin/galeri/', 'refresh');
                 } else {
-                    $this->session->set_flashdata('success', 'Gambar gagal diupload');
+                    $this->session->set_flashdata('success', alertCustom("err", "Data Gambar Gagal Di Perbarui"));
                     redirect('admin/galeri/update/' . $id, 'refresh');
                 }
             } else {
@@ -156,8 +162,8 @@ class Galeri extends CI_Controller
 
                 $this->model_galeri->update_no_image($id, $title, $description, $tampilkan);
 
-                $this->session->set_flashdata('success', 'Galeri berhasil diupdate');
-                redirect('admin/galeri/update/' . $id, 'refresh');
+                $this->session->set_flashdata('success', alertCustom("update"));
+                redirect('admin/galeri', 'refresh');
             }
         } else {
             $data = array(
@@ -179,13 +185,13 @@ class Galeri extends CI_Controller
         if ($this->form_validation->run() == TRUE) {
 
             $id = $this->input->post('id');
+            $data = $this->model_galeri->get_by_id($id);
             $this->model_galeri->delete($id);
+            unlink('images/galeri/small/' . $data['image']);
+            unlink('images/galeri/medium/' . $data['image']);
+            unlink('images/galeri/' . $data['image']);
 
-            unlink('images/galeri/small/' . $data['galeri_item']['image']);
-            unlink('images/galeri/medium/' . $data['galeri_item']['image']);
-            unlink('images/galeri/' . $data['galeri_item']['image']);
-
-            $this->session->set_flashdata('success', 'Galeri sudah dihapus');
+            $this->session->set_flashdata('success', alertCustom("delete"));
             redirect('admin/galeri', 'refresh');
         } else {
             show_404();
