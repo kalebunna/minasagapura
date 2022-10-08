@@ -77,7 +77,8 @@ class Galeri extends CI_Controller
                     redirect('admin/galeri', 'refresh');
                 } else {
                     $this->session->set_flashdata('success', alertCustom("err", "Gambar Gagal Di Upload"));
-                    redirect('admin/galeri/create', 'refresh');
+                    var_dump($this->upload->display_errors());
+                    // redirect('admin/galeri/create', 'refresh');
                 }
             } else {
                 $this->session->set_flashdata('success', alertCustom("err", "Gambar Tidak Boleh Kosong"));

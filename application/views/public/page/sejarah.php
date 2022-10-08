@@ -1,7 +1,7 @@
  <section class="teacher__area pt-100 pb-110">
      <div class="container">
          <div class="row">
-             <div class="col-xxl-8 col-xl-8 col-lg-8">
+             <div class="col-xxl-8 col-xl-8 col-lg-8 ">
                  <div class="teacher__wrapper">
                      <div class="teacher__top d-md-flex align-items-end justify-content-between">
                          <div class="teacher__info">
@@ -15,7 +15,7 @@
                      <?php include(APPPATH . 'views/dir/share.php'); ?>
                  </div>
              </div>
-             <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6">
+             <div class="col-xxl-4 col-xl-4 col-lg-4">
                  <?php $this->load->view('public/page/informasi_umum'); ?>
              </div>
          </div>
